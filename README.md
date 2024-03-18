@@ -3,7 +3,7 @@
 local Settings = {
     AimLock = {
         Enabled = true,
-        Aimlockkey = "c",
+        Aimlockkey = "q",
         Prediction = 0.1839,
         Aimpart = 'HumanoidRootPart',
         Notifications = true, --change to true if u  want notifs//
@@ -12,9 +12,9 @@ local Settings = {
     Settings = {
         Thickness = 2,
         Transparency = 1,
-        Color = Color3.fromRGB(106, 13, 173)
-        FOV = false
- }
+        Color = Color3.fromRGB(106, 13, 173),
+        FOV = true
+    }
 }
 
 -- // DONT EDIT ANYTHING UNDER THIS \\ --
@@ -25,8 +25,8 @@ local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ki
 local Notify = AkaliNotif.Notify;
 
 Notify({
-Description = "Celex 0.1 locks";
-Title = "This Is Test reminds";
+Description = "Loading..";
+Title = "Celex 0.2";
 Duration = 0.9;
 });
 wait(1)
@@ -36,13 +36,13 @@ local Notify = AkaliNotif.Notify;
 
 Notify({
 Description = "Loaded! Prediction: "..  Settings.AimLock.Prediction;"Ping: "..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString();
-Title = "Pred Increase celex";
+Title = "Celex 0.2";
 Duration = 2.5;
 });
 
 Notify({
 Description = "Ping: "..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString();
-Title = "Ping Fixed Celex";
+Title = "Fixed ping Checking";
 Duration = 2.5;
 });
 
@@ -72,7 +72,7 @@ local Notify = AkaliNotif.Notify;
 
 Notify({
 Description = "Unlocked";
-Title = "Celex Updated Ping";
+Title = "tap.lua";
 Duration = 0.5;
 });
 
@@ -87,7 +87,7 @@ local Notify = AkaliNotif.Notify;
 
 Notify({
 Description = "Locked on:"..tostring(Plr.Character.Humanoid.DisplayName);
-Title = "Celex Updated Ping";
+Title = "tap.lua";
 Duration = 0.5;
 });
 
@@ -140,7 +140,7 @@ RunService.Heartbeat:connect(function()
     elseif Settings.AimLock.FOV == true then
         Circle.Visible = true
     else
-        Circle.Visible = true
+        Circle.Visible = false
         Line.Visible = false
     end
 end)
@@ -165,7 +165,7 @@ end)
         local pingvalue = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
         local split = string.split(pingvalue,'(')
         local ping = tonumber(split[1])
-                  if ping < 400 then
+if ping < 400 then
 Settings.AimLock.Prediction = 0.1540
           elseif ping < 395 then
 Settings.AimLock.Prediction = 0.1500
@@ -213,5 +213,7 @@ Settings.AimLock.Predictionn = 0.1229
 Settings.AimLock.Prediction = 0.1225
         elseif ping < 40 then
 Settings.AimLock.Prediction = 0.1256
+        end
+            end
         end
             end
