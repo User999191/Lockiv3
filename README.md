@@ -4,7 +4,7 @@ local Settings = {
     AimLock = {
         Enabled = true,
         Aimlockkey = "c",
-        Prediction = 0.1749,
+        Prediction = 0.1839,
         Aimpart = 'HumanoidRootPart',
         Notifications = true, --change to true if u  want notifs//
         AutoPrediction = true,
@@ -12,9 +12,9 @@ local Settings = {
     Settings = {
         Thickness = 2,
         Transparency = 1,
-        Color = Color3.fromRGB(106, 13, 173),
-        FOV = true
-    }
+        Color = Color3.fromRGB(106, 13, 173)
+        FOV = false
+ }
 }
 
 -- // DONT EDIT ANYTHING UNDER THIS \\ --
@@ -36,13 +36,13 @@ local Notify = AkaliNotif.Notify;
 
 Notify({
 Description = "Loaded! Prediction: "..  Settings.AimLock.Prediction;"Ping: "..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString();
-Title = "tap.lua";
+Title = "Pred Increase celex";
 Duration = 2.5;
 });
 
 Notify({
 Description = "Ping: "..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString();
-Title = "tap.lua";
+Title = "Ping Fixed Celex";
 Duration = 2.5;
 });
 
@@ -72,7 +72,7 @@ local Notify = AkaliNotif.Notify;
 
 Notify({
 Description = "Unlocked";
-Title = "tap.lua";
+Title = "Celex Updated Ping";
 Duration = 0.5;
 });
 
@@ -87,7 +87,7 @@ local Notify = AkaliNotif.Notify;
 
 Notify({
 Description = "Locked on:"..tostring(Plr.Character.Humanoid.DisplayName);
-Title = "tap.lua";
+Title = "Celex Updated Ping";
 Duration = 0.5;
 });
 
@@ -140,7 +140,7 @@ RunService.Heartbeat:connect(function()
     elseif Settings.AimLock.FOV == true then
         Circle.Visible = true
     else
-        Circle.Visible = false
+        Circle.Visible = true
         Line.Visible = false
     end
 end)
@@ -165,7 +165,35 @@ end)
         local pingvalue = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
         local split = string.split(pingvalue,'(')
         local ping = tonumber(split[1])
-        if ping < 130 then
+                  if ping < 400 then
+Settings.AimLock.Prediction = 0.1540
+          elseif ping < 395 then
+Settings.AimLock.Prediction = 0.1500
+          elseif ping < 385 then
+Settings.AimLock.Prediction = 0.1450
+          elseif ping < 370 then
+Settings.AimLock.Prediction = 0.1309
+          elseif ping < 350 then
+Settings.AimLock.Prediction = 0.1099
+          elseif ping < 335 then
+Settings.AimLock.Prediction = 0.1044
+          elseif ping < 325 then
+Settings.AimLock.Prediction = 0.901  
+          elseif ping < 300 then
+Settings.AimLock.Prediction = 0.833 
+          elseif ping < 280 then
+Settings.AimLock.Prediction = 0.789  
+          elseif ping < 250 then
+Settings.AimLock.Prediction = 0.456  
+          elseif ping < 235 then
+Settings.AimLock.Prediction = 0.278 
+                elseif ping < 210 then
+Settings.AimLock.Prediction = 0.278
+                elseif ping < 180 then
+Settings.AimLock.Prediction = 0.225
+                elseif ping < 150 then
+Settings.AimLock.Prediction = 0.195
+         elseif < 130 then
 Settings.AimLock.Prediction = 0.165
         elseif ping < 120 then
 Settings.AimLock.Prediction = 0.153
