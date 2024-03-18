@@ -3,7 +3,7 @@
 local Settings = {
     AimLock = {
         Enabled = true,
-        Aimlockkey = "q",
+        Aimlockkey = "c",
         Prediction = 0.1839,
         Aimpart = 'HumanoidRootPart',
         Notifications = true, --change to true if u  want notifs//
@@ -13,7 +13,7 @@ local Settings = {
         Thickness = 2,
         Transparency = 1,
         Color = Color3.fromRGB(106, 13, 173),
-        FOV = true
+        FOV = false
     }
 }
 
@@ -165,33 +165,33 @@ end)
         local pingvalue = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
         local split = string.split(pingvalue,'(')
         local ping = tonumber(split[1])
-if ping < 400 then
+             if ping < 400 then
 Settings.AimLock.Prediction = 0.1540
-          elseif ping < 395 then
+         elseif ping < 395 then
 Settings.AimLock.Prediction = 0.1500
-          elseif ping < 385 then
+         elseif ping < 385 then
 Settings.AimLock.Prediction = 0.1450
-          elseif ping < 370 then
+         elseif ping < 370 then
 Settings.AimLock.Prediction = 0.1309
-          elseif ping < 350 then
+         elseif ping < 350 then
 Settings.AimLock.Prediction = 0.1099
-          elseif ping < 335 then
+         elseif ping < 335 then
 Settings.AimLock.Prediction = 0.1044
-          elseif ping < 325 then
+         elseif ping < 325 then
 Settings.AimLock.Prediction = 0.901  
-          elseif ping < 300 then
+         elseif ping < 300 then
 Settings.AimLock.Prediction = 0.833 
-          elseif ping < 280 then
+         elseif ping < 280 then
 Settings.AimLock.Prediction = 0.789  
-          elseif ping < 250 then
+         elseif ping < 250 then
 Settings.AimLock.Prediction = 0.456  
-          elseif ping < 235 then
+         elseif ping < 235 then
 Settings.AimLock.Prediction = 0.278 
-                elseif ping < 210 then
+         elseif ping < 210 then
 Settings.AimLock.Prediction = 0.278
-                elseif ping < 180 then
+         elseif ping < 180 then
 Settings.AimLock.Prediction = 0.225
-                elseif ping < 150 then
+         elseif ping < 150 then
 Settings.AimLock.Prediction = 0.195
          elseif < 130 then
 Settings.AimLock.Prediction = 0.165
